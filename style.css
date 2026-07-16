@@ -1,0 +1,177 @@
+/* ---------------------------------------------------------------
+   Alexandra Kagan — paralegal profile site
+   Shared styles for all pages. Plain HTML + CSS, no build step.
+   A restrained, traditional look: serif type, muted navy, quiet rules.
+   --------------------------------------------------------------- */
+
+:root {
+  --bg:        #faf8f4;
+  --surface:   #ffffff;
+  --text:      #23262c;
+  --muted:     #5b5e66;
+  --accent:    #1e3a5f;
+  --accent-sf: #eef2f7;
+  --border:    #e4ded4;
+  --maxw:      44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #16171b;
+    --surface:   #1d1f25;
+    --text:      #e8e7e3;
+    --muted:     #a0a3ab;
+    --accent:    #9bb6d8;
+    --accent-sf: #222a36;
+    --border:    #2c2f38;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+               "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.4rem;
+}
+
+/* ---- Site header / nav ---- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  letter-spacing: 0.3px;
+}
+.brand:hover { text-decoration: none; }
+.nav a {
+  color: var(--muted);
+  margin-left: 1.4rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.nav a:first-child { margin-left: 0; }
+.nav a.active { color: var(--accent); font-weight: 700; }
+
+/* ---- Main ---- */
+
+main { padding: 3.2rem 0; }
+
+h1 { font-size: 2.05rem; line-height: 1.2; margin: 0 0 0.4rem; font-weight: 700; }
+h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 2.8rem 0 1.1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 1.08rem; margin: 0; font-weight: 700; }
+
+.lede { font-size: 1.12rem; color: var(--muted); font-style: italic; margin: 0 0 2rem; }
+
+/* ---- Landing intro ---- */
+
+.intro h1 { margin-bottom: 0.25rem; }
+.intro .tagline {
+  color: var(--muted);
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  margin: 0 0 2.2rem;
+}
+.intro p { margin: 0 0 1.2rem; }
+
+/* ---- CV ---- */
+
+.cv-header { margin-bottom: 1.2rem; }
+.cv-contact {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+.cv-contact a { color: var(--muted); }
+
+.entry { margin-bottom: 1.7rem; }
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.entry-head .role { font-weight: 700; }
+.entry-head .org { color: var(--muted); font-weight: 400; font-style: italic; }
+.entry-head .dates {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.entry ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+.entry li { margin-bottom: 0.35rem; }
+
+.edu-item { margin-bottom: 1rem; }
+.edu-item .degree { font-weight: 700; }
+.edu-item .dates { display: block; color: var(--muted); font-size: 0.9rem; }
+
+.skills-row { margin: 0 0 0.7rem; }
+.skills-row .label { font-weight: 700; color: var(--accent); }
+
+.cv-actions { margin-top: 2.4rem; }
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.15rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+.btn:hover { background: var(--accent-sf); text-decoration: none; }
+
+/* ---- Footer ---- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1.8rem 0;
+}
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.site-footer a { color: var(--muted); }
